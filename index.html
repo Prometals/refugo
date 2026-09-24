@@ -431,6 +431,2160 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Seletor REFUGO | RETRABALHO (só Usinagem) */
+    .tipos {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tipos .opcao {
+      font-size: .95rem;
+      min-height: 2.6rem;
+    }
+
+    .opcao.tipo-ref.sel {
+      background: var(--vermelho);
+      border-color: var(--vermelho);
+    }
+
+    .opcao.tipo-ret.sel {
+      background: #d97706;
+      border-color: #d97706;
+    }
+
+    .tag-tipo {
+      padding: .1rem .35rem;
+      font-size: .68rem;
+      font-weight: 800;
+      border-radius: .3rem;
+    }
+
+    .tag-tipo.REFUGO {
+      color: #ff9494;
+      background: #3a1414;
+    }
+
+    .tag-tipo.RETRABALHO {
+      color: var(--amarelo);
+      background: #3a2a0a;
+    }
+
+    /* Formulário travado (limite da OP atingido) */
+    .opcao:disabled,
+    input:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      filter: none;
+    }
+
+    .aviso.bloqueio {
+      color: var(--amarelo);
+      background: #3a2e10;
+      border-color: #7a5d14;
+      font-weight: 700;
+    }
+
+    .lados .opcao {
+      font-size: 1.1rem;
+      min-height: 2.9rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       6. SUGESTÕES DO MOTIVO
+       ══════════════════════════════════════════════════════════════ */
+    .sugestoes {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background: #0c1117;
+      border: 1px solid var(--borda-campo);
+      border-radius: 0 0 var(--raio) var(--raio);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .5);
+    }
+
+    .sugestoes li {
+      padding: .45rem .8rem;
+      font-size: .88rem;
+      color: var(--suave);
+      border-top: 1px solid #1a2330;
+      cursor: pointer;
+    }
+
+    .sugestoes li.sel,
+    .sugestoes li:hover {
+      background: #16233a;
+      color: #fff;
+    }
+
+    .sugestoes mark {
+      background: none;
+      color: var(--amarelo);
+      font-weight: 800;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       7. DADOS, TABELAS, AVISOS
+       ══════════════════════════════════════════════════════════════ */
+    .dados {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .55rem;
+    }
+
+    .dado {
+      min-width: 0;
+      padding: .55rem .75rem;
+      background: var(--campo);
+      border: 1px solid var(--borda);
+      border-radius: .6rem;
+    }
+
+    .dado span {
+      display: block;
+      font-size: .72rem;
+      color: var(--suave);
+    }
+
+    .dado b {
+      display: block;
+      font-size: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .dado.inteiro {
+      grid-column: 1 / -1;
+    }
+
+    .dado.destaque b {
+      font-size: 1.7rem;
+      color: var(--verde-claro);
+    }
+
+    .vazio-op {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      color: var(--apagado);
+      font-size: .9rem;
+      border: 1px dashed var(--borda);
+      border-radius: .6rem;
+    }
+
+    .aviso {
+      padding: .5rem .7rem;
+      font-size: .82rem;
+      color: #ff9494;
+      background: #3a1414;
+      border: 1px solid #8b1e1e;
+      border-radius: .5rem;
+    }
+
+    /* A lista corta os itens mais antigos se não couber (sem scroll) */
+    .lista-box {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .tabela {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+    }
+
+    .tabela th {
+      text-align: left;
+      padding: .4rem .45rem;
+      font-size: .72rem;
+      color: var(--suave);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .tabela td {
+      padding: .45rem .45rem;
+      border-bottom: 1px solid #1e2a38;
+    }
+
+    .tabela .n {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tabela tr.recente td {
+      background: rgba(52, 211, 153, .08);
+    }
+
+    .btn-x {
+      padding: .1rem .45rem;
+      font-size: .75rem;
+      color: var(--vermelho-claro);
+      background: transparent;
+      border: 1px solid #5a2a2a;
+      border-radius: .35rem;
+      cursor: pointer;
+    }
+
+    .nota-lista {
+      min-height: 1.1rem;
+      font-size: .75rem;
+      color: var(--suave);
+      text-align: center;
+    }
+
+    .lista-vazia {
+      padding: 1.2rem;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--apagado);
+      border: 1px dashed var(--borda);
+      border-radius: .6rem;
+    }
+
+    .medidor-txt {
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+      color: var(--suave);
+      margin: .5rem 0 .3rem;
+    }
+
+    .medidor-txt b {
+      color: #fff;
+    }
+
+    .medidor {
+      height: .55rem;
+      background: var(--campo);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .medidor i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--verde-claro);
+      transition: width .25s;
+    }
+
+    .medidor.cheio i {
+      background: var(--amarelo);
+    }
+
+    .resultado-icone {
+      font-size: 3.6rem;
+      line-height: 1;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       8. RODAPÉ
+       ══════════════════════════════════════════════════════════════ */
+    .rod {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1.2rem .8rem;
+    }
+
+    .rod .dica {
+      font-size: .78rem;
+      color: #6b7a8c;
+      min-width: 0;
+    }
+
+    .rod .direita {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .trava {
+      font-size: .82rem;
+      color: var(--amarelo);
+      white-space: nowrap;
+    }
+
+    .rod .btn {
+      min-width: 9rem;
+    }
+
+    body.sem-rodape .rod {
+      visibility: hidden;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       9. TELA ESTREITA (celular / janela pequena)
+       Aqui as colunas empilham. Essa versão foi feita para PC;
+       no celular funciona, mas pode precisar rolar.
+       ══════════════════════════════════════════════════════════════ */
+    @media (max-width: 820px) {
+      html {
+        font-size: 14px;
+      }
+
+      body {
+        overflow: auto;
+        height: auto;
+        min-height: 100dvh;
+      }
+
+      .etapa.ativa {
+        flex-direction: column;
+      }
+
+      .col-form,
+      .col-35,
+      .col-30 {
+        flex: none;
+      }
+
+      .lista-box {
+        overflow: visible;
+      }
+
+      .rod .dica {
+        display: none;
+      }
+
+      .usuario {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ CABEÇALHO ═══ -->
+  <header class="cab">
+    <div class="marca">TRACK • APONTAMENTO DE REFUGO</div>
+    <div class="usuario" id="infoUsuario"></div>
+  </header>
+
+  <!-- ═══ STEPPER ═══ -->
+  <nav class="stepper" id="stepper">
+    <div class="st" data-etapa="1"><i>1</i><span>Login</span></div>
+    <div class="st" data-etapa="2"><i>2</i><span>Ordem de Produção</span></div>
+    <div class="st" data-etapa="3"><i>3</i><span>Lançar itens</span></div>
+    <div class="st" data-etapa="4"><i>4</i><span>Confirmar</span></div>
+  </nav>
+
+  <main class="corpo">
+
+    <!-- ═══ ETAPA 1 · LOGIN ═══ -->
+    <section class="etapa centro" id="etapa1">
+      <form class="cartao" id="formLogin" autocomplete="off">
+        <h1 class="titulo centralizado">Login</h1>
+        <p class="subtitulo centralizado">Identifique-se para começar.</p>
+
+        <div class="campo">
+          <label for="operador">OPERADOR</label>
+          <select id="operador">
+            <option value="" selected disabled>-- PROCURE SEU NOME --</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="senha">SENHA</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" disabled>
+          <div class="msg" id="msgSenha"></div>
+        </div>
+
+        <button type="submit" class="btn btn-bloco" id="btnEntrar" disabled>ENTRAR (Enter)</button>
+        <p class="msg centralizado" id="travaLogin" style="color:var(--amarelo)"></p>
+      </form>
+    </section>
+
+    <!-- ═══ ETAPA 2 · OP ═══ -->
+    <section class="etapa" id="etapa2">
+      <div class="col col-35">
+        <h2 class="titulo">Qual a OP?</h2>
+        <p class="subtitulo">Digite o número e aperte <kbd>Enter</kbd>.</p>
+
+        <div class="campo">
+          <label for="op">NÚMERO DA OP</label>
+          <input id="op" class="input-grande" inputmode="numeric" autocomplete="off" placeholder="00000">
+          <div class="msg" id="msgOP"></div>
+        </div>
+
+        <button type="button" class="btn btn-bloco" id="btnBuscar">🔍 BUSCAR OP</button>
+      </div>
+
+      <div class="col col-resto">
+        <h2 class="titulo">Dados da OP</h2>
+        <p class="subtitulo">Confira se é a peça certa antes de continuar.</p>
+        <div class="vazio-op" id="opVazia">Nenhuma OP carregada.</div>
+        <div class="dados oculto" id="opDados">
+          <div class="dado"><span>CLIENTE</span><b id="dCliente">-</b></div>
+          <div class="dado"><span>PEDIDO</span><b id="dPedido">-</b></div>
+          <div class="dado"><span>CÓDIGO</span><b id="dCodigo">-</b></div>
+          <div class="dado"><span>LIGA</span><b id="dLiga">-</b></div>
+          <div class="dado inteiro"><span>DESCRIÇÃO</span><b id="dDescricao">-</b></div>
+          <div class="dado"><span>QTD ORDEM / QTD PEÇAS</span><b id="dQtds">-</b></div>
+          <div class="dado"><span>PESO BRUTO UNITÁRIO</span><b id="dPesoBruto">-</b></div>
+          <div class="dado destaque"><span>QTD TOTAL DA OP</span><b id="dLimite">-</b></div>
+          <div class="dado destaque"><span>JÁ APONTADO · SALDO</span><b id="dSaldo">-</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ETAPA 3 · LANÇAR ITENS ═══ -->
+    <section class="etapa" id="etapa3">
+      <div class="col col-form">
+        <h2 class="titulo">Novo item</h2>
+        <p class="subtitulo">Um item para cada combinação de processo, motivo e lado.</p>
+
+        <div class="campo oculto" id="blocoTipo">
+          <span class="rotulo" id="rotuloTipo">TIPO DE APONTAMENTO <kbd>T</kbd> alterna</span>
+          <div class="opcoes tipos" id="gradeTipos" role="group" aria-labelledby="rotuloTipo">
+            <button type="button" class="opcao tipo-ref" data-tipo="REFUGO">🗑 REFUGO</button>
+            <button type="button" class="opcao tipo-ret" data-tipo="RETRABALHO">🔧 RETRABALHO</button>
+          </div>
+        </div>
+
+        <div class="campo">
+          <span class="rotulo" id="rotuloProcesso">PROCESSO</span>
+          <div class="opcoes" id="gradeProcessos" role="group" aria-labelledby="rotuloProcesso"></div>
+        </div>
+
+        <div class="linha" style="grid-template-columns: 1.25fr 1fr">
+          <div class="campo">
+            <label for="motivo">MOTIVO (digite para buscar)</label>
+            <input id="motivo" autocomplete="off" placeholder="Ex.: rechupe" role="combobox"
+              aria-expanded="false" aria-controls="listaSugestoes">
+            <ul class="sugestoes oculto" id="listaSugestoes" role="listbox"></ul>
+            <div class="msg" id="msgMotivo"></div>
+          </div>
+          <div class="campo">
+            <span class="rotulo" id="rotuloLado">LADO <kbd>D</kbd> <kbd>E</kbd> <kbd>N</kbd></span>
+            <div class="opcoes lados" id="gradeLados" role="group" aria-labelledby="rotuloLado">
+              <button type="button" class="opcao" data-lado="LD">LD</button>
+              <button type="button" class="opcao" data-lado="LE">LE</button>
+              <button type="button" class="opcao" data-lado="N/A">N/A</button>
+            </div>
+            <div class="msg" id="msgLado"></div>
+          </div>
+        </div>
+
+        <div class="linha" style="grid-template-columns: 1fr 1fr 1.1fr; align-items: start">
+          <div class="campo">
+            <label for="qtd">QTD (peças)</label>
+            <input id="qtd" inputmode="numeric" autocomplete="off">
+            <div class="msg" id="msgQtd"></div>
+          </div>
+          <div class="campo">
+            <label for="peso">PESO LÍQ. (kg)</label>
+            <input id="peso" inputmode="decimal" autocomplete="off" placeholder="0,000">
+            <div class="msg" id="msgPeso"></div>
+          </div>
+          <div class="campo">
+            <span class="rotulo">&nbsp;</span>
+            <button type="button" class="btn btn-verde btn-bloco" id="btnAdicionar" disabled>➕ ADICIONAR (Enter)</button>
+          </div>
+        </div>
+
+        <div class="aviso oculto" id="avisoLimite"></div>
+      </div>
+
+      <div class="col col-resto">
+        <h2 class="titulo">Itens desta OP <span id="contItens" style="color:var(--suave);font-weight:600"></span></h2>
+        <p class="subtitulo">O item mais recente fica destacado.</p>
+        <div class="lista-box" id="boxItens"></div>
+        <div class="nota-lista" id="notaItens"></div>
+        <div class="medidor-txt"><span>Apontado na OP (antes + esta lista): <b id="medTxt">0 de 0</b> peças</span><span id="medPeso">0,000 kg</span></div>
+        <div class="medidor" id="medidor"><i id="medBarra"></i></div>
+      </div>
+    </section>
+
+    <!-- ═══ ETAPA 4 · CONFIRMAR ═══ -->
+    <section class="etapa" id="etapa4">
+      <div class="col col-resto">
+        <h2 class="titulo">Confira antes de registrar</h2>
+        <p class="subtitulo" id="resumoOP"></p>
+        <div class="lista-box" id="boxResumo"></div>
+        <div class="nota-lista" id="notaResumo"></div>
+        <div class="aviso oculto" id="avisoRegistro"></div>
+      </div>
+      <div class="col col-30">
+        <div class="dados" style="grid-template-columns:1fr">
+          <div class="dado destaque"><span>TOTAL DE PEÇAS</span><b id="totPecas">0</b></div>
+          <div class="dado destaque"><span>PESO TOTAL</span><b id="totPeso">0,000 kg</b></div>
+          <div class="dado"><span>ITENS</span><b id="totItens">0</b></div>
+        </div>
+        <div style="margin-top:auto">
+          <button type="button" class="btn btn-registrar btn-bloco" id="btnRegistrar">🗑 REGISTRAR REFUGO</button>
+          <p class="msg centralizado" style="color:#6b7a8c"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> registrar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ETAPA 5 · RESULTADO ═══ -->
+    <section class="etapa centro" id="etapa5">
+      <div class="cartao centralizado" style="width:min(30rem,100%)">
+        <div class="resultado-icone" id="resIcone">✔</div>
+        <h2 class="titulo" id="resTitulo" style="margin-top:.7rem">Apontamento registrado!</h2>
+        <p class="subtitulo" id="resTexto"></p>
+        <div class="aviso oculto" id="resAviso" style="margin-bottom:.8rem;text-align:left"></div>
+        <button type="button" class="btn btn-verde btn-bloco" id="btnNovo" style="margin-bottom:.5rem">➕ NOVO APONTAMENTO (Enter)</button>
+        <button type="button" class="btn btn-voltar btn-bloco" id="btnSair">🚪 SAIR</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ RODAPÉ ═══ -->
+  <footer class="rod">
+    <div class="dica" id="dicaTeclas"></div>
+    <div class="direita">
+      <span class="trava" id="trava"></span>
+      <button type="button" class="btn btn-voltar" id="btnVoltar">◀ VOLTAR</button>
+      <button type="button" class="btn" id="btnAvancar">PRÓXIMO ▶</button>
+    </div>
+  </footer>
+
+  <script>
+    /* ══════════════════════════════════════════════════════════════
+       CONFIGURAÇÃO
+       ══════════════════════════════════════════════════════════════ */
+    const WEBAPP_PRINCIPAL = 'https://script.google.com/macros/s/AKfycbw2FCtMSWeeV2LsNeS5oNDTHnenaDj4U4s_q6Zhgfjpr0N1dEnm6Lc_75tXAHcRW1dN/exec';
+    const WEBAPP_REFUGO = 'https://script.google.com/macros/s/AKfycbyMnhWllmsD6shx0t8QN9Yplj3ZHPr9-nEr-LXZ0asCcYLsec802G_fRWI4ctXKqpk/exec';
+
+    // Nome exatamente como vai para a planilha
+    const PROCESSOS = {
+      FUNDICAO: ['ENGENHARIA', 'MODELAÇÃO', 'MOLDAGEM', 'PINTURA', 'FUSÃO', 'DESMOLDAGEM'],
+      USINAGEM: ['REBARBAÇÃO', 'JATEAMENTO', 'FURADEIRA', 'RETÍFICA', 'CNC', 'SOLDA', 'TORNO', 'TRATAMENTO TÉRMICO']
+    };
+
+    const MOTIVOS = ['QUEBRA DE LÂMINA', 'PINO GUIA', 'FALHA NA MISTURA', 'CURA DO MOLDE', 'SEM LUVA', 'FALHA COMPACTAÇÃO', 'BATOQUE FORA DE POSIÇÃO', 'DEFORMAÇÃO', 'QUEBRA DE MACHO', 'EXCESSO DE TINTA', 'FALTA DE TINTA', 'MOLDE QUEIMADO', 'FOLGA NO FECHAMENTO', 'MOLDE QUEBRADO', 'SUJEIRA NO MOLDE', 'COLA NA AREA DA PEÇA', 'LUVA DANIFICADA', 'ALTO RELEVO NO MOLDE', 'ESCÓRIA', 'RECHUPE', 'MA FORMAÇÃO', 'LÂMINA OCA', 'FALHA DE PREENCHIMENTO', 'FALHA NO CANAL', 'COLA EM CONTATO COM METAL', 'LÂMINA FECHADA', 'FURO TAMPADO', 'ALOJAMENTO TAMPADO', 'FALHA NO BOSS', 'PEÇA FORA DE MEDIDA', 'ACABAMENTO IRREGULAR', 'ERRO NA FURAÇÃO', 'MARCA DE DISCO NA PEÇA', 'QUEBRA DE PEÇA NA FUNDIÇÃO', 'SEPARAÇÃO DE JOGO ERRADO', 'FALHA NA LÂMINA', 'SINTERIZAÇÃO', 'EMPENAMENTO', 'JUNTA FRIA', 'TRINCA DE MOLDE', 'ABERTURA DE MOLDE', 'BOLHA DE GÁS NA PEÇA', 'BATOQUE CAIU NO MOLDE', 'ERRO DO OPERADOR', 'RETRABALHO', 'PERCA KG NO VAZAMENTO', 'SEM SAÍDA GÁS', 'PEÇA SOLTOU DA BASE MAGNÉTICA', 'ROSCA DE FIXAÇÃO ESPANADA', 'QUEBRA DE PEÇA NO DESEMPENO', 'DUREZA FORA DO ESPECIFICADO', 'TRINCA NA PEÇA', 'PEÇA DANIFICADA EM TERCEIROS', 'PEÇA COM RASTREIO ILEGÍVEL', 'TESTE', 'ERRO NO MODELO', 'FALTA DE LIGA PARA COMPLETAR O PREENCHIMENTO DA PEÇA', 'FALHA NO FECHAMENTO'];
+
+    // Motivos de RETRABALHO (só Usinagem). Cada motivo pertence a um tipo só.
+    const MOTIVOS_RETRABALHO = [
+      'SOLDA / REBARBAÇÃO',
+      'GRAFITE/SOLDA/REBARBAÇÃO',
+      'ABERTURA DE LÂMINA / SOLDA FRIA',
+      'ABERTURA COM DISCO',
+      'SOLDA FRIA',
+      'ABERTURA DA TRINCA / SOLDA / REBARBAÇÃO',
+      'SOLDA / REBARBAÇÃO / FURADEIRA RADIAL'
+    ];
+
+    // Setores que podem apontar RETRABALHO além de REFUGO
+    const DEPTOS_COM_RETRABALHO = ['USINAGEM'];
+
+    // Atenção: senha no HTML fica visível no F12 do navegador.
+    // Ok para painel interno; o ideal no futuro é validar no Apps Script.
+    const OPERADORES = {
+      EMERSON: {senha: 'Fund4321@', depto: 'FUNDICAO'},
+      LUIZ: {senha: 'Usi1234@', depto: 'USINAGEM'}
+    };
+
+    const DEPTO_NOME = {FUNDICAO: '🔥 FUNDIÇÃO', USINAGEM: '⚙️ USINAGEM'};
+    const TIMEOUT_RESPOSTA_MS = 4000;
+    const MAX_SUGESTOES = 6;
+
+    /* ══════════════════════════════════════════════════════════════
+       ESTADO — tudo que o painel sabe fica aqui
+       ══════════════════════════════════════════════════════════════ */
+    const estado = {
+      etapa: 1,
+      operador: '',
+      depto: '',
+      op: {valida: false, numero: '', dados: null, jaApontado: 0, consultaFalhou: false},
+      form: {tipo: 'REFUGO', processo: '', motivo: '', lado: ''},
+      tocado: {},            // campos que o operador já mexeu (só mostra erro depois)
+      itens: [],             // [{tipo, processo, motivo, lado, qtd, peso}]
+      sugestoes: [],
+      sugIndice: -1,
+      enviando: false
+    };
+
+    /* ══════════════════════════════════════════════════════════════
+       UTILITÁRIOS
+       ══════════════════════════════════════════════════════════════ */
+    const $ = id => document.getElementById(id);
+
+    function esc(txt) {
+      return String(txt ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+    }
+
+    // Remove acentos e padroniza: "Rechupe" e "RECHUPE" viram a mesma coisa
+    function normalizar(txt) {
+      return String(txt || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().trim();
+    }
+
+    // Aceita "1,2" ou "1.2" (vírgula brasileira)
+    function lerNumero(txt) {
+      const limpo = String(txt || '').trim().replace(/\./g, '').replace(',', '.');
+      // se o operador usou ponto como decimal (ex.: 1.5) e não tem vírgula
+      const final = /,/.test(txt) ? limpo : String(txt || '').trim();
+      const n = Number(final);
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function kg(n) {
+      return n.toLocaleString('pt-BR', {minimumFractionDigits: 3, maximumFractionDigits: 3});
+    }
+
+    function setMsg(id, texto, tipo) {
+      const el = $(id);
+      el.textContent = texto || '';
+      el.className = 'msg' + (tipo ? ' ' + tipo : '');
+    }
+
+    function marcarCampo(id, ok) {
+      $(id).classList.toggle('invalido', ok === false);
+      $(id).classList.toggle('valido', ok === true);
+    }
+
+    function dormir(ms) {
+      return new Promise(res => setTimeout(res, ms));
+    }
+
+    function limiteOP() {
+      return estado.op.dados ? estado.op.dados._limite : 0;
+    }
+
+    function somaQtd(lista) {
+      return lista.reduce((s, it) => s + it.qtd, 0);
+    }
+
+    // Peças que já estavam apontadas na planilha para esta OP (refugo + retrabalho)
+    function jaApontado() {
+      return estado.op.jaApontado || 0;
+    }
+
+    // Saldo antes desta lista = total da OP − o que já foi registrado antes
+    function saldoOP() {
+      return limiteOP() - jaApontado();
+    }
+
+    // Quantas peças ainda podem ser lançadas agora (saldo único: refugo + retrabalho)
+    function saldo() {
+      return saldoOP() - somaQtd(estado.itens);
+    }
+
+    function temTipo() {
+      return DEPTOS_COM_RETRABALHO.includes(estado.depto);
+    }
+
+    function motivosDoTipo() {
+      return estado.form.tipo === 'RETRABALHO' ? MOTIVOS_RETRABALHO : MOTIVOS;
+    }
+
+    function tagTipo(tipo) {
+      return `<span class="tag-tipo ${tipo}">${tipo === 'RETRABALHO' ? 'RETRAB.' : 'REFUGO'}</span>`;
+    }
+
+    // Limite atingido: o formulário fica bloqueado até remover um item da lista
+    function formTravado() {
+      return estado.etapa === 3 && estado.op.valida && saldo() <= 0;
+    }
+
+    function somaPeso(lista) {
+      return lista.reduce((s, it) => s + it.peso, 0);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       ETAPA 1 · LOGIN
+       ══════════════════════════════════════════════════════════════ */
+    function senhaOk() {
+      const op = OPERADORES[$('operador').value];
+      return !!op && $('senha').value === op.senha;
+    }
+
+    // Enquanto digita: NÃO julga a senha, só limpa qualquer erro anterior.
+    // O certo/errado só aparece depois de clicar em ENTRAR (ou Enter).
+    function atualizarLogin() {
+      const temOperador = !!$('operador').value;
+      const temSenha = !!$('senha').value;
+      $('senha').disabled = !temOperador;
+
+      setMsg('msgSenha', '');
+      marcarCampo('senha', null);
+
+      $('btnEntrar').disabled = !(temOperador && temSenha);
+      $('travaLogin').textContent = !temOperador ? '🔒 Selecione seu nome'
+        : !temSenha ? '🔒 Digite sua senha' : '';
+    }
+
+    function entrar(e) {
+      if (e) e.preventDefault();
+      if (!$('operador').value || !$('senha').value) return;
+      if (!senhaOk()) {
+        setMsg('msgSenha', '✖ Senha incorreta. Tente de novo.', 'erro');
+        marcarCampo('senha', false);
+        $('senha').select();
+        return;
+      }
+      estado.operador = $('operador').value;
+      estado.depto = OPERADORES[estado.operador].depto;
+      montarProcessos();
+      irPara(2);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       ETAPA 2 · OP
+       ══════════════════════════════════════════════════════════════ */
+    function onOpDigitada() {
+      // Qualquer mudança no número invalida a OP e os itens lançados
+      $('op').value = $('op').value.replace(/\D/g, '');
+      if (estado.op.valida && $('op').value !== estado.op.numero) {
+        estado.op = {valida: false, numero: '', dados: null, jaApontado: 0, consultaFalhou: false};
+        limparItens();
+      }
+      renderOP();
+      render();
+    }
+
+    function renderOP() {
+      const op = estado.op;
+      $('opVazia').classList.toggle('oculto', op.valida);
+      $('opDados').classList.toggle('oculto', !op.valida);
+      if (op.valida) {
+        const d = op.dados;
+        $('dCliente').textContent = d.cliente || '-';
+        $('dPedido').textContent = d.pedido || '-';
+        $('dCodigo').textContent = d.codigo || '-';
+        $('dLiga').textContent = d.liga || '-';
+        $('dDescricao').textContent = d.descricao || '-';
+        $('dQtds').textContent = (Number(d.qtdordem) || 0) + ' / ' + d._qtdMoldesBase;
+        $('dPesoBruto').textContent = kg(d._pesoBrutoUnit) + ' kg';
+        $('dLimite').textContent = d._limite;
+        $('dSaldo').innerHTML = op.saldoCarregando ? '<span style="color:var(--suave);font-size:1rem">consultando…</span>'
+          : op.consultaFalhou ? '<span style="color:var(--vermelho-claro);font-size:1rem">não consultado</span>'
+          : `${jaApontado()} <span style="font-size:1rem;color:var(--suave)">· saldo ${Math.max(saldoOP(), 0)}</span>`;
+        if (op.saldoNaoVerificado && !op.saldoCarregando) {
+          $('dSaldo').innerHTML = '<span style="color:var(--amarelo);font-size:1rem">será conferido ao registrar</span>';
+        }
+        if (op.saldoCarregando) setMsg('msgOP', '✔ OP encontrada · consultando o saldo…', 'ok');
+        else if (op.saldoNaoVerificado) setMsg('msgOP', '✔ OP encontrada · ⚠ saldo não verificado agora: o sistema confere ao registrar', 'ok');
+        else if (op.consultaFalhou) setMsg('msgOP', '✖ Não consegui consultar o que já foi apontado nesta OP. Busque de novo.', 'erro');
+        else if (d._limite > 0 && saldoOP() <= 0) setMsg('msgOP', `🔒 Esta OP já atingiu o total: ${jaApontado()} de ${d._limite} peças apontadas.`, 'erro');
+        else setMsg('msgOP', '✔ OP encontrada', 'ok');
+        marcarCampo('op', true);
+        $('btnBuscar').textContent = '✔ OP VALIDADA';
+        $('btnBuscar').className = 'btn btn-bloco btn-verde';
+      } else {
+        marcarCampo('op', null);
+        $('btnBuscar').className = 'btn btn-bloco';
+        $('btnBuscar').textContent = '🔍 BUSCAR OP';
+      }
+    }
+
+    function parseDataHoraBR(s) {
+      const m = String(s || '').match(/^(\d{2})\/(\d{2})\/(\d{4})[ T]?(\d{2})?:?(\d{2})?:?(\d{2})?/);
+      if (!m) return 0;
+      return new Date(m[3], m[2] - 1, m[1], m[4] || 0, m[5] || 0, m[6] || 0).getTime();
+    }
+
+    // Valor BASE (primeiro salvamento do PCP), via HISTORICO_FUSAO,
+    // porque BASE_OP_IMPORTADA é sobrescrita a cada corrida consumida.
+    function calcularBaseMoldes(op, itemGerente, historico) {
+      const entradas = (historico || []).filter(h => String(h.op).trim() === op);
+      if (entradas.length) {
+        entradas.sort((a, b) => parseDataHoraBR(a.dataHora) - parseDataHoraBR(b.dataHora));
+        return {qtd: Number(entradas[0].saldoMoldesAntes) || 0, peso: Number(entradas[0].saldoPesoAntes) || 0};
+      }
+      return {qtd: Number(itemGerente.qtdmoldes) || 0, peso: Number(itemGerente.pesomoldes) || 0};
+    }
+
+    // Soma o que já foi registrado na planilha de refugo para esta OP
+    // (refugo + retrabalho). Devolve null se não conseguir consultar.
+    function semZeros(v) {
+      return String(v ?? '').trim().replace(/^0+(?=\d)/, '');
+    }
+
+    // Consulta LEVE do saldo: o backend lê só as colunas OP e QTD e devolve
+    // um número ({jaApontado}). Se o backend ainda for o antigo (devolve a
+    // lista), soma aqui mesmo. Devolve null se não conseguir consultar.
+    async function consultarJaApontado(numero) {
+      for (let tentativa = 1; tentativa <= 2; tentativa++) {
+        try {
+          const r = await fetch(WEBAPP_REFUGO + '?saldo=1&op=' + encodeURIComponent(numero) + '&t=' + Date.now());
+          const resp = JSON.parse(await r.text());
+          if (resp && typeof resp.jaApontado === 'number') return resp.jaApontado;
+          if (Array.isArray(resp)) {
+            return resp.filter(x => semZeros(x.op) === semZeros(numero))
+              .reduce((s, x) => s + (Number(x.qtdRefugo) || 0), 0);
+          }
+        } catch (e) { /* tenta de novo */ }
+        if (tentativa === 1) await dormir(1500);
+      }
+      return null;
+    }
+
+    /* ── Carteira em memória ──
+       A carteira (gerente=1) e o histórico de fusão são grandes e lentos.
+       Em vez de baixar os dois a cada busca, baixamos ao abrir o painel e
+       atualizamos em segundo plano a cada 5 minutos. A busca da OP vira
+       uma busca local, instantânea. */
+    const CARTEIRA_ATUALIZAR_MS = 5 * 60 * 1000;
+    const carteira = {lista: [], historico: [], carregadaEm: 0, promessa: null};
+
+    function carregarCarteira() {
+      if (carteira.promessa) return carteira.promessa;     // já está baixando: espera a mesma
+      carteira.promessa = (async () => {
+        try {
+          const [rG, rH] = await Promise.all([
+            fetch(WEBAPP_PRINCIPAL + '?gerente=1&t=' + Date.now()),
+            fetch(WEBAPP_PRINCIPAL + '?tipo=historicoFusao&t=' + Date.now())
+          ]);
+          const lista = await rG.json();
+          const historico = await rH.json();
+          if (Array.isArray(lista)) {
+            carteira.lista = lista;
+            carteira.historico = Array.isArray(historico) ? historico : [];
+            carteira.carregadaEm = Date.now();
+          }
+          return true;
+        } catch (e) {
+          console.warn('[Refugo] Falha ao carregar a carteira:', e.message);
+          return false;
+        } finally {
+          carteira.promessa = null;
+        }
+      })();
+      return carteira.promessa;
+    }
+
+    /* ── Saldos em memória ──
+       O total já apontado de TODAS as OPs vem numa chamada leve só
+       (?saldos=1), no login e a cada 1 min em segundo plano. Assim a busca
+       da OP não espera o Google. A garantia final continua no backend:
+       o doPost recusa qualquer linha que passe do total da OP. */
+    const SALDOS_ATUALIZAR_MS = 60 * 1000;
+    const saldos = {mapa: {}, carregadoEm: 0, promessa: null, suportado: true};
+
+    // fetch com tempo máximo: não deixa o operador esperando para sempre
+    async function fetchComPrazo(url, ms) {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), ms);
+      try {
+        return await fetch(url, {signal: ctrl.signal});
+      } finally {
+        clearTimeout(t);
+      }
+    }
+
+    function carregarSaldos() {
+      if (saldos.promessa) return saldos.promessa;
+      saldos.promessa = (async () => {
+        try {
+          const r = await fetchComPrazo(WEBAPP_REFUGO + '?saldos=1&t=' + Date.now(), 20000);
+          const txt = await r.text();
+          const resp = JSON.parse(txt);
+          if (resp && resp.saldos && typeof resp.saldos === 'object') {
+            saldos.mapa = resp.saldos;
+            saldos.carregadoEm = Date.now();
+            return true;
+          }
+          // Backend antigo (sem a rota ?saldos): devolve a lista inteira
+          if (Array.isArray(resp)) {
+            saldos.suportado = false;
+            console.warn('[Refugo] Backend sem a rota ?saldos=1: publique a versão nova do backend.');
+          }
+          return false;
+        } catch (e) {
+          console.warn('[Refugo] Falha ao carregar saldos:', e.message);
+          return false;
+        } finally {
+          saldos.promessa = null;
+        }
+      })();
+      return saldos.promessa;
+    }
+
+    function saldoDaMemoria(numero) {
+      return saldos.carregadoEm ? (saldos.mapa[semZeros(numero)] || 0) : null;
+    }
+
+    // Depois de registrar, soma localmente o que acabou de ser gravado
+    function somarNaMemoria(numero, qtd) {
+      if (!saldos.carregadoEm) return;
+      const k = semZeros(numero);
+      saldos.mapa[k] = (saldos.mapa[k] || 0) + qtd;
+    }
+
+    function acharNaCarteira(numero) {
+      return carteira.lista.find(x => String(x.op).trim() === numero && x.cliente);
+    }
+
+    async function buscarOP() {
+      const numero = $('op').value.trim();
+      if (!numero) {setMsg('msgOP', '✖ Digite o número da OP', 'erro'); marcarCampo('op', false); return;}
+      if ($('btnBuscar').disabled) return;
+
+      $('btnBuscar').disabled = true;
+      $('btnBuscar').textContent = 'BUSCANDO...';
+      setMsg('msgOP', '');
+
+      try {
+        // 1) Procura na memória. Só vai ao Google se a carteira ainda não
+        //    carregou ou se a OP não está nela (pode ter sido liberada agora).
+        if (!carteira.carregadaEm) await carregarCarteira();
+        let item = acharNaCarteira(numero);
+        if (!item && Date.now() - carteira.carregadaEm > 20000) {
+          $('btnBuscar').textContent = 'ATUALIZANDO CARTEIRA...';
+          await carregarCarteira();
+          item = acharNaCarteira(numero);
+        }
+        if (!carteira.carregadaEm) throw new Error('carteira indisponível');
+        const historico = carteira.historico;
+
+        // O operador pode ter mudado o número enquanto buscava
+        if ($('op').value.trim() !== numero) return;
+
+        if (!item || !item.cliente) {
+          estado.op = {valida: false, numero: '', dados: null, jaApontado: 0, consultaFalhou: false};
+          renderOP();
+          setMsg('msgOP', '✖ OP não encontrada na carteira ativa', 'erro');
+          marcarCampo('op', false);
+          return;
+        }
+
+        const base = calcularBaseMoldes(numero, item, historico);
+        const limite = Math.max(Number(item.qtdordem) || 0, base.qtd);
+        estado.op = {
+          valida: true,
+          numero: numero,
+          dados: {
+            ...item,
+            _qtdMoldesBase: base.qtd,
+            _pesoMoldesBase: base.peso,
+            _limite: limite,
+            _pesoBrutoUnit: limite > 0 ? base.peso / limite : 0
+          },
+          jaApontado: 0,
+          consultaFalhou: false,
+          saldoCarregando: false,
+          saldoNaoVerificado: false
+        };
+
+        // 2) Saldo: vem da memória, na hora. Se a memória ainda não carregou
+        //    (primeiros segundos do painel), espera no máximo 4 s por ela.
+        let ja = saldoDaMemoria(numero);
+        if (ja === null && saldos.suportado) {
+          estado.op.saldoCarregando = true;
+          renderOP();
+          render();
+          await Promise.race([carregarSaldos(), dormir(4000)]);
+          if (estado.op.numero !== numero) return;
+          ja = saldoDaMemoria(numero);
+          estado.op.saldoCarregando = false;
+        }
+        if (ja === null) {
+          // Sem saldo em memória: segue o fluxo mesmo assim. O backend confere
+          // o total da OP na hora de gravar e recusa se passar.
+          estado.op.saldoNaoVerificado = true;
+          ja = 0;
+          carregarSaldos();       // tenta de novo em segundo plano
+        }
+        estado.op.jaApontado = ja;
+        renderOP();
+        if (limite <= 0) setMsg('msgOP', '⚠ OP sem quantidade cadastrada: não será possível lançar refugo', 'erro');
+        $('btnAvancar').focus();
+
+        // 3) Em segundo plano, confere se alguém apontou esta OP no último minuto
+        if (saldos.carregadoEm && Date.now() - saldos.carregadoEm > 15000) {
+          carregarSaldos().then(ok => {
+            if (!ok || estado.op.numero !== numero || estado.etapa > 3) return;
+            const novo = saldoDaMemoria(numero);
+            if (novo !== null && novo !== estado.op.jaApontado) {
+              estado.op.jaApontado = novo;
+              estado.op.saldoNaoVerificado = false;
+              renderOP();
+              if (estado.etapa === 3) {renderItens(); renderForm();}
+              render();
+            }
+          });
+        }
+      } catch (err) {
+        setMsg('msgOP', '✖ Erro ao buscar a OP. Verifique a conexão e tente de novo.', 'erro');
+      } finally {
+        $('btnBuscar').disabled = false;
+        if (!estado.op.valida) $('btnBuscar').textContent = '🔍 BUSCAR OP';
+        render();
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       ETAPA 3 · LANÇAR ITENS
+       ══════════════════════════════════════════════════════════════ */
+    function montarProcessos() {
+      const lista = PROCESSOS[estado.depto] || [];
+      const grade = $('gradeProcessos');
+      grade.style.gridTemplateColumns = `repeat(${lista.length > 6 ? 4 : 3}, 1fr)`;
+      grade.innerHTML = lista.map((p, i) =>
+        `<button type="button" class="opcao" data-processo="${esc(p)}"><span class="tecla">${i + 1}</span>${esc(p)}</button>`
+      ).join('');
+      $('rotuloProcesso').innerHTML = `PROCESSO · ${DEPTO_NOME[estado.depto]} <kbd>1</kbd>–<kbd>${lista.length}</kbd>`;
+      // Seletor REFUGO | RETRABALHO só aparece para quem pode apontar retrabalho
+      $('blocoTipo').classList.toggle('oculto', !temTipo());
+      estado.form.tipo = 'REFUGO';
+    }
+
+    function escolherProcesso(nome) {
+      if (formTravado()) return;
+      estado.form.processo = nome;
+      renderForm();
+      $('motivo').focus();
+    }
+
+    // Troca REFUGO ⇄ RETRABALHO. O motivo digitado é limpo, porque cada
+    // tipo tem a sua própria lista de motivos.
+    function escolherTipo(tipo) {
+      if (!temTipo() || formTravado() || estado.form.tipo === tipo) return;
+      estado.form.tipo = tipo;
+      estado.form.motivo = '';
+      $('motivo').value = '';
+      fecharSugestoes();
+      renderForm();
+      (estado.form.processo ? $('motivo') : document.querySelector('#gradeProcessos .opcao')).focus();
+    }
+
+    function escolherLado(lado) {
+      if (formTravado()) return;
+      estado.form.lado = lado;
+      estado.tocado.lado = true;
+      renderForm();
+      $('qtd').focus();
+    }
+
+    // ── Motivo com sugestões ──
+    function motivoCanonico(txt) {
+      const alvo = normalizar(txt);
+      return motivosDoTipo().find(m => normalizar(m) === alvo) || '';
+    }
+
+    function filtrarMotivos(txt) {
+      const alvo = normalizar(txt);
+      if (!alvo) return [];
+      const comeca = [], contem = [];
+      motivosDoTipo().forEach(m => {
+        const n = normalizar(m);
+        if (n.startsWith(alvo)) comeca.push(m);
+        else if (n.includes(alvo)) contem.push(m);
+      });
+      return [...comeca, ...contem].slice(0, MAX_SUGESTOES);
+    }
+
+    function destacar(motivo, digitado) {
+      const n = normalizar(motivo);
+      const alvo = normalizar(digitado);
+      const i = n.indexOf(alvo);
+      if (i < 0 || !alvo) return esc(motivo);
+      // normalizar não muda o tamanho do texto em maiúsculas, então os índices batem
+      return esc(motivo.slice(0, i)) + '<mark>' + esc(motivo.slice(i, i + alvo.length)) + '</mark>' + esc(motivo.slice(i + alvo.length));
+    }
+
+    function onMotivoInput() {
+      estado.tocado.motivo = true;
+      estado.form.motivo = motivoCanonico($('motivo').value);
+      estado.sugestoes = estado.form.motivo ? [] : filtrarMotivos($('motivo').value);
+      estado.sugIndice = estado.sugestoes.length ? 0 : -1;
+      renderSugestoes();
+      renderForm();
+    }
+
+    function renderSugestoes() {
+      const ul = $('listaSugestoes');
+      const abertas = estado.sugestoes.length > 0;
+      ul.classList.toggle('oculto', !abertas);
+      $('motivo').setAttribute('aria-expanded', abertas);
+      ul.innerHTML = estado.sugestoes.map((m, i) =>
+        `<li role="option" data-indice="${i}" class="${i === estado.sugIndice ? 'sel' : ''}">${destacar(m, $('motivo').value)}</li>`
+      ).join('');
+    }
+
+    function fecharSugestoes() {
+      estado.sugestoes = [];
+      estado.sugIndice = -1;
+      renderSugestoes();
+    }
+
+    function escolherMotivo(motivo) {
+      $('motivo').value = motivo;
+      estado.form.motivo = motivo;
+      estado.tocado.motivo = true;
+      fecharSugestoes();
+      renderForm();
+      // Próximo campo: lado (se ainda não escolhido) ou quantidade
+      const alvo = estado.form.lado
+        ? $('qtd')
+        : document.querySelector('#gradeLados .opcao');
+      alvo.focus();
+    }
+
+    function onMotivoKeydown(e) {
+      const temSug = estado.sugestoes.length > 0;
+      if (e.key === 'ArrowDown' && temSug) {
+        e.preventDefault();
+        estado.sugIndice = (estado.sugIndice + 1) % estado.sugestoes.length;
+        renderSugestoes();
+      } else if (e.key === 'ArrowUp' && temSug) {
+        e.preventDefault();
+        estado.sugIndice = (estado.sugIndice - 1 + estado.sugestoes.length) % estado.sugestoes.length;
+        renderSugestoes();
+      } else if (e.key === 'Enter' && !e.ctrlKey) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (temSug && estado.sugIndice >= 0) escolherMotivo(estado.sugestoes[estado.sugIndice]);
+        else if (estado.form.motivo) escolherMotivo(estado.form.motivo);
+      } else if (e.key === 'Escape' && temSug) {
+        e.preventDefault();
+        e.stopPropagation();
+        fecharSugestoes();
+      }
+    }
+
+    // ── Validação do formulário ──
+    // Devolve um objeto com a mensagem de erro de cada campo ('' = ok)
+    function lerForm() {
+      return {
+        tipo: temTipo() ? estado.form.tipo : 'REFUGO',
+        processo: estado.form.processo,
+        motivo: estado.form.motivo,
+        lado: estado.form.lado,
+        qtdTxt: $('qtd').value.trim(),
+        pesoTxt: $('peso').value.trim(),
+        qtd: Number($('qtd').value.trim()),
+        peso: lerNumero($('peso').value)
+      };
+    }
+
+    function errosForm() {
+      const f = lerForm();
+      const lancado = jaApontado() + somaQtd(estado.itens);
+      const maximo = limiteOP() - lancado;
+      const e = {processo: '', motivo: '', lado: '', qtd: '', peso: '', limite: ''};
+
+      if (!f.processo) e.processo = 'Escolha o processo';
+      if (!f.motivo) e.motivo = $('motivo').value.trim() ? 'Motivo não encontrado na lista' : 'Informe o motivo';
+      if (!f.lado) e.lado = 'Escolha o lado';
+
+      if (!f.qtdTxt) e.qtd = 'Informe a quantidade';
+      else if (!/^\d+$/.test(f.qtdTxt) || f.qtd < 1) e.qtd = 'Número inteiro, mínimo 1';
+      else if (f.qtd > maximo) {
+        e.qtd = 'Máximo ' + Math.max(maximo, 0);
+        e.limite = maximo <= 0
+          ? `⚠ A OP já está no limite: ${lancado} de ${limiteOP()} peças apontadas.`
+          : `⚠ Passa do limite: já apontado ${lancado} + ${f.qtd} = ${lancado + f.qtd}, mas a OP tem ${limiteOP()}. Máximo para este item: ${maximo}.`;
+      }
+
+      if (!f.pesoTxt) e.peso = 'Informe o peso';
+      else if (!(f.peso > 0)) e.peso = 'Peso inválido (ex.: 1,250)';
+
+      return e;
+    }
+
+    function formValido() {
+      const e = errosForm();
+      return Object.values(e).every(v => !v);
+    }
+
+    function formVazio() {
+      const f = lerForm();
+      return !f.processo && !$('motivo').value.trim() && !f.lado && !f.qtdTxt && !f.pesoTxt;
+    }
+
+    function renderForm() {
+      const e = errosForm();
+      const t = estado.tocado;
+
+      document.querySelectorAll('#gradeTipos .opcao').forEach(b =>
+        b.classList.toggle('sel', b.dataset.tipo === estado.form.tipo));
+      $('motivo').placeholder = estado.form.tipo === 'RETRABALHO' ? 'Ex.: solda' : 'Ex.: rechupe';
+      $('motivo').previousElementSibling.textContent = estado.form.tipo === 'RETRABALHO'
+        ? 'MOTIVO DO RETRABALHO (digite para buscar)' : 'MOTIVO (digite para buscar)';
+      document.querySelectorAll('#gradeProcessos .opcao').forEach(b =>
+        b.classList.toggle('sel', b.dataset.processo === estado.form.processo));
+      document.querySelectorAll('#gradeLados .opcao').forEach(b =>
+        b.classList.toggle('sel', b.dataset.lado === estado.form.lado));
+
+      // Motivo
+      if (!$('motivo').value.trim()) {setMsg('msgMotivo', ''); marcarCampo('motivo', null);}
+      else if (estado.form.motivo) {setMsg('msgMotivo', '✔ ' + estado.form.motivo, 'ok'); marcarCampo('motivo', true);}
+      else if (t.motivo && !estado.sugestoes.length) {setMsg('msgMotivo', '✖ ' + e.motivo, 'erro'); marcarCampo('motivo', false);}
+      else {setMsg('msgMotivo', ''); marcarCampo('motivo', null);}
+
+      setMsg('msgLado', t.lado && e.lado ? '✖ ' + e.lado : '', 'erro');
+
+      // Qtd e peso: só mostra erro depois que o operador digitou algo
+      const qtdErro = t.qtd && $('qtd').value && e.qtd;
+      setMsg('msgQtd', qtdErro ? '✖ ' + e.qtd : '', 'erro');
+      marcarCampo('qtd', $('qtd').value ? !qtdErro : null);
+
+      const pesoErro = t.peso && $('peso').value && e.peso;
+      setMsg('msgPeso', pesoErro ? '✖ ' + e.peso : '', 'erro');
+      marcarCampo('peso', $('peso').value ? !pesoErro : null);
+
+      // Bloqueio por limite atingido
+      const travado = formTravado();
+      document.querySelectorAll('#gradeTipos .opcao, #gradeProcessos .opcao, #gradeLados .opcao').forEach(b => b.disabled = travado);
+      ['motivo', 'qtd', 'peso'].forEach(id => $(id).disabled = travado);
+
+      const textoAviso = travado
+        ? `🔒 Limite da OP atingido: ${jaApontado() + somaQtd(estado.itens)} de ${limiteOP()} peças (${jaApontado()} já registradas antes + ${somaQtd(estado.itens)} nesta lista).` +
+          (estado.itens.length ? ' Para lançar outro item, remova um item da lista (✖).' : '')
+        : e.limite;
+      $('avisoLimite').textContent = textoAviso;
+      $('avisoLimite').classList.toggle('bloqueio', travado);
+      $('avisoLimite').classList.toggle('oculto', !textoAviso);
+
+      $('btnAdicionar').disabled = travado || !formValido();
+      renderRodape();
+    }
+
+    function adicionarItem() {
+      if (!formValido()) {
+        // Mostra todos os erros de uma vez para o operador ver o que falta
+        estado.tocado = {motivo: true, lado: true, qtd: true, peso: true};
+        renderForm();
+        return false;
+      }
+      const f = lerForm();
+      estado.itens.push({tipo: f.tipo, processo: f.processo, motivo: f.motivo, lado: f.lado, qtd: f.qtd, peso: f.peso});
+      limparForm();
+      renderItens();
+      renderForm();
+      if (formTravado()) $('btnAvancar').focus();
+      else focarProcesso();
+      return true;
+    }
+
+    function removerItem(i) {
+      const estavaTravado = formTravado();
+      estado.itens.splice(i, 1);
+      renderItens();
+      renderForm();
+      if (estavaTravado && !formTravado()) focarProcesso();
+    }
+
+    function limparForm() {
+      estado.form = {tipo: estado.form.tipo, processo: '', motivo: '', lado: ''};
+      estado.tocado = {};
+      $('motivo').value = '';
+      $('qtd').value = '';
+      $('peso').value = '';
+      estado.qtdAnterior = '';
+      fecharSugestoes();
+    }
+
+    function limparItens() {
+      estado.itens = [];
+      estado.form.tipo = 'REFUGO';
+      limparForm();
+      renderItens();
+    }
+
+    function focarProcesso() {
+      const b = document.querySelector('#gradeProcessos .opcao');
+      if (b) b.focus();
+    }
+
+    // Tabela de itens. Se não couber na altura, esconde os mais antigos
+    // (sem barra de rolagem) e mostra quantos ficaram de fora.
+    function tabelaItens(lista, comRemover) {
+      return `
+        <table class="tabela">
+          <thead><tr>
+            ${comRemover ? '' : '<th>#</th>'}
+            ${temTipo() ? '<th>TIPO</th>' : ''}
+            <th>MOTIVO</th><th>PROCESSO</th><th>LADO</th><th class="n">QTD</th><th class="n">KG</th>
+            ${comRemover ? '<th></th>' : ''}
+          </tr></thead>
+          <tbody>
+            ${lista.map((it, i) => `
+              <tr class="${comRemover && i === lista.length - 1 ? 'recente' : ''}">
+                ${comRemover ? '' : `<td>${i + 1}</td>`}
+                ${temTipo() ? `<td>${tagTipo(it.tipo)}</td>` : ''}
+                <td>${esc(it.motivo)}</td><td>${esc(it.processo)}</td><td>${esc(it.lado)}</td>
+                <td class="n">${it.qtd}</td><td class="n">${kg(it.peso)}</td>
+                ${comRemover ? `<td class="n"><button type="button" class="btn-x" data-remover="${i}" title="Remover">✖</button></td>` : ''}
+              </tr>`).join('')}
+          </tbody>
+        </table>`;
+    }
+
+    function encaixarLinhas(boxId, notaId, textoNota) {
+      const box = $(boxId);
+      const linhas = [...box.querySelectorAll('tbody tr')];
+      linhas.forEach(tr => tr.style.display = '');
+      let escondidas = 0;
+      while (box.scrollHeight > box.clientHeight + 1 && escondidas < linhas.length - 1) {
+        linhas[escondidas].style.display = 'none';
+        escondidas++;
+      }
+      $(notaId).textContent = escondidas ? textoNota(escondidas) : '';
+    }
+
+    function renderItens() {
+      const lista = estado.itens;
+      $('contItens').textContent = lista.length ? `(${lista.length})` : '';
+      $('boxItens').innerHTML = lista.length
+        ? tabelaItens(lista, true)
+        : '<div class="lista-vazia">Nenhum item lançado ainda.</div>';
+      encaixarLinhas('boxItens', 'notaItens', n => `+ ${n} item(ns) mais antigo(s) oculto(s) para caber na tela · o total acima conta todos`);
+
+      const total = jaApontado() + somaQtd(lista);
+      const limite = limiteOP();
+      $('medTxt').textContent = `${total} de ${limite}`;
+      $('medPeso').textContent = kg(somaPeso(lista)) + ' kg';
+      $('medBarra').style.width = (limite ? Math.min(total / limite, 1) * 100 : 0) + '%';
+      $('medidor').classList.toggle('cheio', limite > 0 && total >= limite);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       ETAPA 4 · CONFIRMAR E REGISTRAR
+       ══════════════════════════════════════════════════════════════ */
+    function renderResumo() {
+      const d = estado.op.dados;
+      $('resumoOP').textContent = `OP ${estado.op.numero} · ${d.cliente || '-'} · ${d.codigo || '-'} · ${d.descricao || '-'}`;
+      $('boxResumo').innerHTML = tabelaItens(estado.itens, false);
+      encaixarLinhas('boxResumo', 'notaResumo', n => `+ ${n} item(ns) no início da lista (volte à etapa anterior para ver todos)`);
+      $('totPecas').innerHTML = `${somaQtd(estado.itens)} <span style="font-size:.9rem;color:var(--suave)">de ${Math.max(saldoOP(), 0)} de saldo</span>`;
+      $('totPeso').textContent = kg(somaPeso(estado.itens)) + ' kg';
+      if (temTipo()) {
+        const ref = estado.itens.filter(it => it.tipo !== 'RETRABALHO');
+        const ret = estado.itens.filter(it => it.tipo === 'RETRABALHO');
+        $('totItens').innerHTML = `${estado.itens.length} <span style="font-size:.8rem;color:var(--suave);font-weight:600">` +
+          `· refugo ${somaQtd(ref)} pç / ${kg(somaPeso(ref))} kg · retrabalho ${somaQtd(ret)} pç / ${kg(somaPeso(ret))} kg</span>`;
+      } else {
+        $('totItens').textContent = estado.itens.length;
+      }
+      $('avisoRegistro').classList.add('oculto');
+      $('btnRegistrar').disabled = estado.enviando;
+      $('btnRegistrar').textContent = estado.enviando ? 'SALVANDO...' : (temTipo() ? '✔ REGISTRAR APONTAMENTO' : '🗑 REGISTRAR REFUGO');
+    }
+
+    function montarPayload(it) {
+      const d = estado.op.dados;
+      return {
+        operador: estado.operador,
+        op: estado.op.numero,
+        pedido: d.pedido || '',
+        cliente: d.cliente || '',
+        codigo: d.codigo || '',
+        descricao: d.descricao || '',
+        liga: d.liga || '',
+        lote: estado.op.numero,
+        lado: it.lado,
+        processo: it.processo,
+        qtdOrdem: Number(d.qtdordem) || 0,
+        qtdMoldes: Number(d._qtdMoldesBase) || 0,
+        pesoTotalMoldes: Number(d._pesoMoldesBase) || 0,
+        qtdRefugo: it.qtd,
+        pesoLiquido: it.peso,
+        motivo: it.motivo,
+        tipo: it.tipo || 'REFUGO',
+        chave: it.chave
+      };
+    }
+
+    // O Google às vezes devolve página anti-robô ou a tabela inteira
+    // (redirect virando GET). Não é resposta real do doPost → tenta de novo.
+    function respostaInesperada(txt) {
+      if (txt === 'ERRO_OCUPADO_TENTE_NOVAMENTE') return true;   // fila cheia no servidor: tenta de novo
+      return !(txt === 'OK' || txt === 'DUPLICADO' || txt.startsWith('ERRO_'));
+    }
+
+    async function enviarComRetry(payload, tentativas = 3) {
+      const rotulo = (payload.tipo === 'RETRABALHO' ? 'RETRAB. ' : '') + payload.motivo + ' / ' + payload.lado;
+      for (let i = 0; i < tentativas; i++) {
+        try {
+          const r = await fetch(WEBAPP_REFUGO, {method: 'POST', body: JSON.stringify(payload)});
+          const txt = (await r.text()).trim();
+          if (respostaInesperada(txt)) {
+            if (i < tentativas - 1) {await dormir(2000); continue;}
+            return {ok: false, mensagem: 'Sem confirmação do Google (' + rotulo + ')'};
+          }
+          if (txt === 'OK' || txt === 'DUPLICADO') return {ok: true};
+          if (txt.startsWith('ERRO_LIMITE_OP')) {
+            // Formato: ERRO_LIMITE_OP|já apontado|total da OP
+            const [, ja, lim] = txt.split('|');
+            return {ok: false, recusado: true, mensagem: `${rotulo}: a OP já tem ${ja} de ${lim} peças apontadas`};
+          }
+          return {ok: false, mensagem: txt + ' (' + rotulo + ')'};
+        } catch (err) {
+          if (i < tentativas - 1) {await dormir(2000); continue;}
+          return {ok: false, mensagem: 'Erro de conexão (' + rotulo + ')'};
+        }
+      }
+    }
+
+    async function registrarRefugo() {
+      if (estado.enviando || estado.etapa !== 4 || !estado.itens.length) return;
+      estado.enviando = true;
+      renderResumo();
+      renderRodape();
+
+      // Cada item ganha uma CHAVE única. Se o envio for repetido (retry),
+      // o backend reconhece a chave e não grava duas vezes.
+      const lote = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+      const itens = estado.itens.map((it, i) => ({...it, chave: lote + '-' + (i + 1)}));
+      const resumo = `${itens.length} item(ns) · ${somaQtd(itens)} peça(s) · ${kg(somaPeso(itens))} kg · OP ${estado.op.numero}`;
+      let resolvido = false;
+
+      // Se a resposta demorar, libera o operador (o backend grava em ~3s)
+      setTimeout(() => {
+        if (resolvido) return;
+        resolvido = true;
+        mostrarResultado(true, 'Enviado! A confirmação do Google demorou, mas a gravação já está em andamento.', resumo);
+      }, TIMEOUT_RESPOSTA_MS * itens.length);
+
+      // Envio em SEQUÊNCIA (um item por vez), não em paralelo.
+      // Vários POSTs ao mesmo tempo no Apps Script podem escrever na mesma
+      // linha da planilha e um apagar o outro.
+      const resultados = [];
+      for (let i = 0; i < itens.length; i++) {
+        if (!resolvido) $('btnRegistrar').textContent = `SALVANDO ${i + 1} de ${itens.length}...`;
+        resultados.push(await enviarComRetry(montarPayload(itens[i])));
+      }
+      const falhas = resultados.filter(r => !r.ok);
+      // O que gravou com sucesso já entra no saldo em memória (sem esperar o Google)
+      resultados.forEach((r, i) => {if (r.ok) somarNaMemoria(estado.op.numero, itens[i].qtd);});
+      // Recusa por limite = com certeza NÃO gravou. Outras falhas = pode ter gravado ou não.
+      const recusados = falhas.filter(f => f.recusado);
+      const incertos = falhas.filter(f => !f.recusado);
+      const textoFalha = [
+        recusados.length ? '✖ NÃO gravado (passaria do total da OP): ' + recusados.map(f => f.mensagem).join(' | ') + '.' : '',
+        incertos.length ? '⚠ Pode não ter sido salvo: ' + incertos.map(f => f.mensagem).join(' | ') + '. Confira na planilha.' : ''
+      ].filter(Boolean).join(' ');
+
+      if (resolvido) {
+        // Resposta tardia: só atualiza a tela se algo deu errado
+        if (falhas.length && estado.etapa === 5) mostrarResultado(false, 'Apontamento com pendências.', resumo, textoFalha);
+        return;
+      }
+      resolvido = true;
+      mostrarResultado(!falhas.length, falhas.length ? 'Apontamento com pendências.' : 'Apontamento registrado!', resumo, textoFalha);
+    }
+
+    function mostrarResultado(sucesso, titulo, texto, aviso) {
+      estado.enviando = false;
+      $('resIcone').textContent = sucesso ? '✔' : '⚠';
+      $('resIcone').style.color = sucesso ? 'var(--verde-claro)' : 'var(--amarelo)';
+      $('resTitulo').textContent = titulo;
+      $('resTexto').textContent = texto;
+      $('resAviso').textContent = aviso || '';
+      $('resAviso').classList.toggle('oculto', !aviso);
+      irPara(5);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       NAVEGAÇÃO
+       ══════════════════════════════════════════════════════════════ */
+    // O que está travando a etapa atual ('' = pode avançar)
+    function trava(etapa) {
+      if (etapa === 2) {
+        if (!estado.op.valida) return 'Busque e valide a OP';
+        if (limiteOP() <= 0) return 'OP sem quantidade cadastrada';
+        if (estado.op.saldoCarregando) return 'Consultando o saldo da OP…';
+        if (estado.op.consultaFalhou) return 'Não consegui consultar o histórico da OP: busque de novo';
+        if (saldoOP() <= 0) return 'OP já atingiu o total de peças';
+      }
+      if (etapa === 3) {
+        if (estado.itens.length === 0 && !formValido()) return 'Adicione pelo menos 1 item';
+        if (!formVazio() && !formValido() && estado.itens.length) return 'Termine ou limpe o item em edição';
+      }
+      return '';
+    }
+
+    function avancar() {
+      if (estado.etapa === 3 && !formVazio()) {
+        // Item preenchido e válido vai junto; incompleto trava (não perde dado sem querer)
+        if (formValido()) adicionarItem();
+        else {estado.tocado = {motivo: true, lado: true, qtd: true, peso: true}; renderForm(); return;}
+      }
+      if (trava(estado.etapa)) return;
+      if (estado.etapa === 2 || estado.etapa === 3) irPara(estado.etapa + 1);
+    }
+
+    function voltar() {
+      if (estado.enviando) return;
+      if (estado.etapa >= 2 && estado.etapa <= 4) irPara(estado.etapa - 1);
+    }
+
+    function novoApontamento() {
+      estado.op = {valida: false, numero: '', dados: null, jaApontado: 0, consultaFalhou: false};
+      $('op').value = '';
+      setMsg('msgOP', '');
+      renderOP();
+      limparItens();
+      irPara(2);
+    }
+
+    function sair() {
+      if (estado.itens.length && estado.etapa !== 5 &&
+        !confirm('Existem itens lançados que ainda não foram registrados. Sair mesmo assim?')) return;
+      novoApontamento();
+      estado.operador = '';
+      estado.depto = '';
+      $('operador').selectedIndex = 0;
+      $('senha').value = '';
+      atualizarLogin();
+      irPara(1);
+    }
+
+    function irPara(n) {
+      estado.etapa = n;
+      document.querySelectorAll('.etapa').forEach(s => s.classList.toggle('ativa', s.id === 'etapa' + n));
+      if (n === 3) {renderItens(); renderForm();}
+      if (n === 4) renderResumo();
+      render();
+
+      // Foco automático no campo certo de cada etapa
+      if (n === 1) ($('operador').value ? $('senha') : $('operador')).focus();
+      if (n === 2) (estado.op.valida ? $('btnAvancar') : $('op')).focus();
+      if (n === 3) focarProcesso();
+      if (n === 4) $('btnRegistrar').focus();
+      if (n === 5) $('btnNovo').focus();
+    }
+
+    const DICAS = {
+      2: '<kbd>Enter</kbd> buscar / avançar · <kbd>Esc</kbd> voltar',
+      3: () => (temTipo() ? '<kbd>T</kbd> refugo/retrabalho · ' : '') + `<kbd>1</kbd>–<kbd>${(PROCESSOS[estado.depto] || []).length}</kbd> processo · <kbd>D</kbd>/<kbd>E</kbd>/<kbd>N</kbd> lado · <kbd>Enter</kbd> adicionar · <kbd>Ctrl</kbd>+<kbd>Enter</kbd> revisar · <kbd>Esc</kbd> voltar`,
+      4: '<kbd>Ctrl</kbd>+<kbd>Enter</kbd> registrar · <kbd>Esc</kbd> voltar e editar itens'
+    };
+
+    function renderRodape() {
+      const e = estado.etapa;
+      const d = DICAS[e];
+      $('dicaTeclas').innerHTML = typeof d === 'function' ? d() : (d || '');
+      $('btnVoltar').disabled = estado.enviando;
+      $('btnAvancar').classList.toggle('oculto', e === 4);
+      $('btnAvancar').textContent = e === 3 ? 'REVISAR ▶' : 'PRÓXIMO ▶';
+      const t = trava(e);
+      $('btnAvancar').disabled = !!t;
+      $('trava').textContent = t && e !== 4 ? '🔒 ' + t : '';
+    }
+
+    function render() {
+      const e = estado.etapa;
+      document.body.classList.toggle('sem-stepper', e === 1 || e === 5);
+      document.body.classList.toggle('sem-rodape', e === 1 || e === 5);
+
+      document.querySelectorAll('.st').forEach(st => {
+        const n = Number(st.dataset.etapa);
+        st.classList.toggle('feito', n < e);
+        st.classList.toggle('atual', n === e);
+        st.querySelector('i').textContent = n < e ? '✔' : n;
+      });
+      // Os passos concluídos mostram o que foi escolhido
+      document.querySelector('.st[data-etapa="2"] span').textContent = e > 2 && estado.op.valida ? 'OP ' + estado.op.numero : 'Ordem de Produção';
+      document.querySelector('.st[data-etapa="3"] span').textContent = e > 3 ? estado.itens.length + ' item(ns)' : 'Lançar itens';
+
+      const d = estado.op.dados;
+      $('infoUsuario').innerHTML = !estado.operador ? '' :
+        `Operador: <b>${esc(estado.operador)}</b> · ${DEPTO_NOME[estado.depto]}` +
+        (estado.op.valida && e >= 3 ? ` · OP <b>${esc(estado.op.numero)}</b> · ${esc(d.cliente || '')} · ${esc(d.codigo || '')}` : '') +
+        ` · <button type="button" class="link-sair" id="linkSair">Sair</button>`;
+
+      renderRodape();
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       TECLADO — atalhos globais
+       ══════════════════════════════════════════════════════════════ */
+    function emCampoDeTexto(el) {
+      return el && (el.tagName === 'INPUT' || el.tagName === 'SELECT' || el.tagName === 'TEXTAREA');
+    }
+
+    function onTeclaGlobal(e) {
+      const alvo = e.target;
+      const etapa = estado.etapa;
+
+      // Ctrl+Enter: revisar (etapa 3) ou registrar (etapa 4)
+      if (e.key === 'Enter' && e.ctrlKey) {
+        e.preventDefault();
+        if (etapa === 3) avancar();
+        else if (etapa === 4) registrarRefugo();
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        if (etapa >= 2 && etapa <= 4) {e.preventDefault(); voltar();}
+        return;
+      }
+
+      if (etapa === 5 && e.key === 'Enter' && alvo.tagName !== 'BUTTON') {
+        e.preventDefault();
+        novoApontamento();
+        return;
+      }
+
+      if (etapa === 2 && e.key === 'Enter' && alvo.tagName !== 'BUTTON') {
+        e.preventDefault();
+        if (estado.op.valida && $('op').value === estado.op.numero) {if (!estado.op.saldoCarregando) avancar();}
+        else buscarOP();
+        return;
+      }
+
+      if (etapa !== 3 || e.ctrlKey || e.altKey || e.metaKey) return;
+
+      // Enter nos campos da etapa 3
+      if (e.key === 'Enter') {
+        if (alvo.id === 'qtd') {e.preventDefault(); $('peso').focus(); return;}
+        if (alvo.id === 'peso') {e.preventDefault(); adicionarItem(); return;}
+        if (alvo.tagName !== 'BUTTON' && !emCampoDeTexto(alvo)) {e.preventDefault(); adicionarItem();}
+        return;
+      }
+
+      // Atalhos de tecla única só quando o foco NÃO está num campo de digitação
+      if (emCampoDeTexto(alvo)) return;
+
+      const lista = PROCESSOS[estado.depto] || [];
+      const num = Number(e.key);
+      if (num >= 1 && num <= lista.length) {
+        e.preventDefault();
+        escolherProcesso(lista[num - 1]);
+        return;
+      }
+      if (e.key.toLowerCase() === 't' && temTipo()) {
+        e.preventDefault();
+        escolherTipo(estado.form.tipo === 'RETRABALHO' ? 'REFUGO' : 'RETRABALHO');
+        return;
+      }
+      const lados = {d: 'LD', e: 'LE', n: 'N/A'};
+      if (lados[e.key.toLowerCase()]) {
+        e.preventDefault();
+        escolherLado(lados[e.key.toLowerCase()]);
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       EVENTOS
+       ══════════════════════════════════════════════════════════════ */
+    function ligarEventos() {
+      // Login
+      $('operador').addEventListener('change', () => {$('senha').value = ''; atualizarLogin(); $('senha').focus();});
+      $('senha').addEventListener('input', atualizarLogin);
+      $('formLogin').addEventListener('submit', entrar);
+
+      // OP
+      $('op').addEventListener('input', onOpDigitada);
+      $('btnBuscar').addEventListener('click', buscarOP);
+
+      // Itens
+      $('gradeProcessos').addEventListener('click', e => {
+        const b = e.target.closest('[data-processo]');
+        if (b) escolherProcesso(b.dataset.processo);
+      });
+      $('gradeTipos').addEventListener('click', e => {
+        const b = e.target.closest('[data-tipo]');
+        if (b) escolherTipo(b.dataset.tipo);
+      });
+      $('gradeLados').addEventListener('click', e => {
+        const b = e.target.closest('[data-lado]');
+        if (b) escolherLado(b.dataset.lado);
+      });
+      $('motivo').addEventListener('input', onMotivoInput);
+      $('motivo').addEventListener('keydown', onMotivoKeydown);
+      $('motivo').addEventListener('blur', () => setTimeout(() => {fecharSugestoes(); renderForm();}, 150));
+      $('listaSugestoes').addEventListener('mousedown', e => {
+        const li = e.target.closest('[data-indice]');
+        if (li) {e.preventDefault(); escolherMotivo(estado.sugestoes[Number(li.dataset.indice)]);}
+      });
+      // A quantidade não aceita valor acima do saldo da OP:
+      // se o operador digitar mais, o campo volta ao último valor válido.
+      $('qtd').addEventListener('input', () => {
+        let v = $('qtd').value.replace(/\D/g, '');
+        if (v && Number(v) > saldo()) {
+          v = estado.qtdAnterior || '';
+          $('qtd').value = v;
+          estado.tocado.qtd = true;
+          renderForm();
+          setMsg('msgQtd', `✖ Saldo da OP: no máximo ${Math.max(saldo(), 0)} peça(s)`, 'erro');
+          return;
+        }
+        $('qtd').value = v;
+        estado.qtdAnterior = v;
+        estado.tocado.qtd = true;
+        renderForm();
+      });
+      $('peso').addEventListener('input', () => {
+        $('peso').value = $('peso').value.replace(/[^\d,.]/g, '');
+        estado.tocado.peso = true;
+        renderForm();
+      });
+      $('btnAdicionar').addEventListener('click', adicionarItem);
+      $('boxItens').addEventListener('click', e => {
+        const b = e.target.closest('[data-remover]');
+        if (b) removerItem(Number(b.dataset.remover));
+      });
+
+      // Confirmar / resultado
+      $('btnRegistrar').addEventListener('click', registrarRefugo);
+      $('btnNovo').addEventListener('click', novoApontamento);
+      $('btnSair').addEventListener('click', sair);
+
+      // Rodapé e cabeçalho
+      $('btnVoltar').addEventListener('click', voltar);
+      $('btnAvancar').addEventListener('click', avancar);
+      $('infoUsuario').addEventListener('click', e => {if (e.target.id === 'linkSair') sair();});
+
+      document.addEventListener('keydown', onTeclaGlobal);
+
+      // Ao redimensionar a janela, recalcula quantas linhas cabem
+      window.addEventListener('resize', () => {
+        if (estado.etapa === 3) renderItens();
+        if (estado.etapa === 4) renderResumo();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      $('operador').insertAdjacentHTML('beforeend',
+        Object.keys(OPERADORES).map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join(''));
+      ligarEventos();
+      atualizarLogin();
+      irPara(1);
+      carregarCarteira();                                   // já baixa enquanto o operador faz login
+      setInterval(carregarCarteira, CARTEIRA_ATUALIZAR_MS);
+      carregarSaldos();
+      setInterval(carregarSaldos, SALDOS_ATUALIZAR_MS);
+    });
+  </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRACK REFUGO WEB</title>
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       1. VARIÁVEIS
+       ══════════════════════════════════════════════════════════════ */
+    :root {
+      --bg: #0a0d12;
+      --card: #141c25;
+      --campo: #0e1319;
+      --borda: #2a3543;
+      --borda-campo: #334154;
+      --suave: #9eb0c1;
+      --apagado: #4a5568;
+      --azul: #3b82f6;
+      --verde: #2d6a4f;
+      --verde-claro: #34d399;
+      --vermelho: #ef4444;
+      --vermelho-claro: #ff8a8a;
+      --amarelo: #fbbf24;
+      --neutro: #263241;
+      --raio: .6rem;
+    }
+
+    /* A fonte base acompanha o tamanho da janela: tudo em "rem" cresce
+       ou encolhe junto. É isso que faz a tela caber sem barra de rolagem
+       tanto num monitor 1366x768 quanto num Full HD. */
+    html {
+      font-size: clamp(12px, min(1.95vh, 1.15vw), 18px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      height: 100dvh;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    button,
+    input {
+      font: inherit;
+      color: inherit;
+    }
+
+    .oculto {
+      display: none !important;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       2. CABEÇALHO + STEPPER
+       ══════════════════════════════════════════════════════════════ */
+    .cab {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: .7rem 1.2rem;
+      background: #151b24;
+    }
+
+    .marca {
+      color: var(--vermelho);
+      font-weight: 800;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .usuario {
+      font-size: .85rem;
+      color: var(--suave);
+      text-align: right;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .usuario b {
+      color: #fff;
+    }
+
+    .link-sair {
+      background: none;
+      border: none;
+      color: var(--suave);
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0 0 0 .3rem;
+    }
+
+    .stepper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .45rem;
+      padding: .7rem 1.2rem 0;
+    }
+
+    .st {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .5rem .7rem;
+      font-size: .85rem;
+      color: #5d6b7c;
+      background: #10161e;
+      border: 1px solid #1d2632;
+      border-radius: .5rem;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .st i {
+      flex: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: .75rem;
+      font-weight: 800;
+      background: #1d2632;
+    }
+
+    .st.feito {
+      color: var(--verde-claro);
+    }
+
+    .st.feito i {
+      background: var(--verde);
+      color: #fff;
+    }
+
+    .st.atual {
+      color: #fff;
+      border-color: var(--vermelho);
+    }
+
+    .st.atual i {
+      background: var(--vermelho);
+    }
+
+    body.sem-stepper .stepper {
+      visibility: hidden;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       3. ÁREA DAS ETAPAS
+       O <main> ocupa o espaço que sobra (1fr) e NUNCA rola.
+       ══════════════════════════════════════════════════════════════ */
+    .corpo {
+      min-height: 0;
+      padding: .8rem 1.2rem;
+      display: flex;
+    }
+
+    .etapa {
+      flex: 1;
+      min-width: 0;
+      min-height: 0;
+      display: none;
+    }
+
+    .etapa.ativa {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .etapa.centro.ativa {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      padding: 1rem;
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: .8rem;
+    }
+
+    .col-form {
+      flex: 0 0 55%;
+    }
+
+    .col-35 {
+      flex: 0 0 36%;
+    }
+
+    .col-30 {
+      flex: 0 0 30%;
+    }
+
+    .col-resto {
+      flex: 1;
+    }
+
+    .cartao {
+      width: min(26rem, 100%);
+      padding: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 1rem;
+    }
+
+    .titulo {
+      margin: 0 0 .15rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .subtitulo {
+      margin: 0 0 .8rem;
+      font-size: .85rem;
+      color: var(--suave);
+    }
+
+    .centralizado {
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       4. CAMPOS
+       ══════════════════════════════════════════════════════════════ */
+    .campo {
+      position: relative;
+      margin-bottom: .7rem;
+      min-width: 0;
+    }
+
+    label,
+    .rotulo {
+      display: block;
+      margin-bottom: .3rem;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--suave);
+    }
+
+    kbd {
+      font-family: inherit;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 0 .3rem;
+      color: #cbd5e1;
+      background: #1d2632;
+      border: 1px solid var(--borda-campo);
+      border-radius: .25rem;
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: .65rem .8rem;
+      font-size: 1.05rem;
+      background: var(--campo);
+      border: 1px solid var(--borda-campo);
+      border-radius: var(--raio);
+      color: #fff;
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--azul);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, .25);
+    }
+
+    input.invalido {
+      border-color: var(--vermelho);
+    }
+
+    input.valido {
+      border-color: var(--verde);
+    }
+
+    .input-grande {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      padding: .7rem 1rem;
+    }
+
+    .msg {
+      min-height: 1.1rem;
+      margin-top: .25rem;
+      font-size: .78rem;
+    }
+
+    .msg.ok {
+      color: var(--verde-claro);
+    }
+
+    .msg.erro {
+      color: var(--vermelho-claro);
+    }
+
+    .linha {
+      display: grid;
+      gap: .8rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       5. BOTÕES
+       ══════════════════════════════════════════════════════════════ */
+    .btn {
+      min-height: 2.9rem;
+      padding: .6rem 1.1rem;
+      font-size: .95rem;
+      font-weight: 800;
+      line-height: 1.2;
+      border: none;
+      border-radius: var(--raio);
+      background: var(--neutro);
+      color: #fff;
+      cursor: pointer;
+      transition: filter .15s, transform .08s;
+    }
+
+    .btn:not(:disabled):hover {
+      filter: brightness(1.15);
+    }
+
+    .btn:not(:disabled):active {
+      transform: scale(.97);
+    }
+
+    .btn:disabled {
+      background: #171e28;
+      color: var(--apagado);
+      cursor: not-allowed;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--azul);
+      outline-offset: 2px;
+    }
+
+    .btn-bloco {
+      width: 100%;
+    }
+
+    .btn-verde {
+      background: var(--verde);
+    }
+
+    .btn-voltar {
+      background: #1c2531;
+      color: var(--suave);
+    }
+
+    .btn-registrar {
+      background: var(--vermelho);
+      font-size: 1.1rem;
+      min-height: 3.6rem;
+    }
+
+    .btn-registrar:disabled {
+      background: #3a2424;
+      color: #7a5555;
+    }
+
+    /* Botões de escolha (processo e lado) */
+    .opcoes {
+      display: grid;
+      gap: .45rem;
+    }
+
+    .opcao {
+      min-height: 2.6rem;
+      padding: .4rem .5rem;
+      font-size: .82rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--suave);
+      background: var(--campo);
+      border: 1px solid var(--borda-campo);
+      border-radius: .5rem;
+      cursor: pointer;
+      transition: filter .15s;
+    }
+
+    .opcao:hover {
+      filter: brightness(1.25);
+    }
+
+    .opcao:focus-visible {
+      outline: 2px solid var(--azul);
+      outline-offset: 1px;
+    }
+
+    .opcao.sel {
+      color: #fff;
+      background: var(--azul);
+      border-color: var(--azul);
+    }
+
+    .opcao .tecla {
+      opacity: .65;
+      margin-right: .25rem;
+    }
+
+    .lados {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     /* Formulário travado (limite da OP atingido) */
     .opcao:disabled,
     input:disabled {
